@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">MetoLabs</string>
+    <string name="rudgeRamos">Rudge Ramos</string>
+
+    <string name="reportar">Reportar problema</string>
+    <string name="salvar">Salvar</string>
+
+    <string-array name="status">
+    <item>Em aula</item>
+    <item>Livre</item>
+    <item>Fechado</item>
+    </string-array>
+
+    <string-array name="labs">
+        <item>D-230</item>
+        <item>D-259</item>
+        <item>L-415</item>
+    </string-array>
 </resources>
