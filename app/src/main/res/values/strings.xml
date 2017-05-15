@@ -6,9 +6,9 @@
     <string name="salvar">Salvar</string>
 
     <string-array name="status">
-    <item>Em aula</item>
-    <item>Livre</item>
-    <item>Fechado</item>
+        <item>Em aula</item>
+        <item>Livre</item>
+        <item>Fechado</item>
     </string-array>
 
     <string-array name="labs">

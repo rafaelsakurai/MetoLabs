@@ -11,7 +11,6 @@ import java.util.Scanner;
 /**
  * Created by rafaelsakurai on 26/04/17.
  */
-
 public class LabWS {
 
    public List<Lab> consultar(){

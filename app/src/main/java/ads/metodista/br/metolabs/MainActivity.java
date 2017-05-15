@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import java.util.List;
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         lista = (ListView) findViewById(R.id.labs);
        // String[] itens = getResources().getStringArray(R.array.labs); //vetor de strings
         new CarregarLabs().execute();
+
+
     }
 
      class CarregarLabs extends AsyncTask<String, Void, List<Lab>> {
