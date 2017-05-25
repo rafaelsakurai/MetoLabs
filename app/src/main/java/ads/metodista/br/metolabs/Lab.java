@@ -6,16 +6,21 @@ package ads.metodista.br.metolabs;
 
 public class Lab {
 
-    private String _id;
+    private String id;
     private String nome;
     private String status;
 
-    public String get_id() {
-        return _id;
+    public Lab(String nome) {
+        this.nome = nome;
+        this.status = "Fechado";
     }
 
-    public void set_id(String _id) {
-        this._id = _id;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -32,5 +37,14 @@ public class Lab {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Lab{" +
+                "_id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
