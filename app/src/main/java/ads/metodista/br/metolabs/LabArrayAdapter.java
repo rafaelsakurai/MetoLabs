@@ -2,6 +2,7 @@ package ads.metodista.br.metolabs;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +46,8 @@ public class LabArrayAdapter extends ArrayAdapter<Lab>{
         int pos = spinnerAdapter.getPosition(lab.getStatus());
         spinner.setSelection(pos);
 
+        mudarCorPorStatus(linha, pos);//Muda a cor da linha conforme o status da sala
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -57,6 +60,9 @@ public class LabArrayAdapter extends ArrayAdapter<Lab>{
                         if(!lab.getStatus().equals(status)) {
                             //Muda o status do lab e atualiza no Web Service.
                             lab.setStatus(status);
+
+                            mudarCorPorStatus((View)parent.getParent(), position); //altera a cor da linha conforme o status
+
                             new AtualizarLab(lab).execute();
                         }
                         break;
@@ -71,6 +77,20 @@ public class LabArrayAdapter extends ArrayAdapter<Lab>{
         });
 
         return linha;
+    }
+
+    private void mudarCorPorStatus(View obj, int status){
+        switch (status){
+            case 0:
+                obj.setBackgroundColor(Color.YELLOW); //Em aula
+                break;
+            case 1:
+                obj.setBackgroundColor(Color.GREEN); //Livre
+                break;
+            case 2:
+                obj.setBackgroundColor(Color.RED); //Fechado
+                break;
+        }
     }
 
     class AtualizarLab extends AsyncTask<String, Void, String> {
